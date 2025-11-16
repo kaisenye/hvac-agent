@@ -283,11 +283,13 @@ function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
   const { toggleSidebar } = useSidebar()
 
   return (
-    <button
+    <Button
       data-sidebar="rail"
       data-slot="sidebar-rail"
       aria-label="Toggle Sidebar"
       tabIndex={-1}
+      variant="ghost"
+      size="icon"
       onClick={toggleSidebar}
       title="Toggle Sidebar"
       className={cn(
@@ -297,6 +299,7 @@ function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
         'hover:group-data-[collapsible=offcanvas]:bg-sidebar group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full',
         '[[data-side=left][data-collapsible=offcanvas]_&]:-right-2',
         '[[data-side=right][data-collapsible=offcanvas]_&]:-left-2',
+        'bg-transparent shadow-none border-0 p-0 h-auto w-4',
         className,
       )}
       {...props}

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Button } from "@/components/ui/button"
 
 interface FAQItem {
   question: string
@@ -85,22 +86,23 @@ export default function FAQSection() {
 
               return (
                 <div key={index} className="w-full border-b border-[rgba(73,66,61,0.16)] overflow-hidden">
-                  <button
+                  <Button
+                    variant="ghost"
+                    className="w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-[rgba(73,66,61,0.02)] transition-colors duration-200 h-auto"
                     onClick={() => toggleItem(index)}
-                    className="w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-[rgba(73,66,61,0.02)] transition-colors duration-200"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex-1 text-[#49423D] text-base font-medium leading-6 font-sans">
+                    <span className="flex-1 text-left text-[#49423D] text-base font-medium leading-6 font-sans">
                       {item.question}
-                    </div>
-                    <div className="flex justify-center items-center">
+                    </span>
+                    <span className="flex justify-center items-center">
                       <ChevronDownIcon
                         className={`w-6 h-6 text-[rgba(73,66,61,0.60)] transition-transform duration-300 ease-in-out ${
                           isOpen ? "rotate-180" : "rotate-0"
                         }`}
                       />
-                    </div>
-                  </button>
+                    </span>
+                  </Button>
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${

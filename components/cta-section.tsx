@@ -1,4 +1,6 @@
-"use client"
+'use client'
+
+import { Button } from '@/components/ui/button'
 
 export default function CTASection() {
   return (
@@ -13,8 +15,8 @@ export default function CTASection() {
                 className="absolute h-4 w-full rotate-[-45deg] origin-top-left outline outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]"
                 style={{
                   top: `${i * 16 - 120}px`,
-                  left: "-100%",
-                  width: "300%",
+                  left: '-100%',
+                  width: '300%',
                 }}
               ></div>
             ))}
@@ -24,22 +26,22 @@ export default function CTASection() {
         <div className="w-full max-w-[586px] px-6 py-5 md:py-8 overflow-hidden rounded-lg flex flex-col justify-start items-center gap-6 relative z-20">
           <div className="self-stretch flex flex-col justify-start items-start gap-3">
             <div className="self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[56px] font-sans tracking-tight">
-              Ready to transform your business?
+              Join the HVAC Voice AI waitlist
             </div>
             <div className="self-stretch text-center text-[#605A57] text-base leading-7 font-sans font-medium">
-              Join thousands of businesses streamlining their operations,
-              <br />
-              managing schedules, and growing with data-driven insights.
+              Be the first to launch a monitored AI front desk that never misses a lead, books qualified jobs, and
+              proves ROI with real-time analytics.
             </div>
           </div>
           <div className="w-full max-w-[497px] flex flex-col justify-center items-center gap-12">
             <div className="flex justify-start items-center gap-4">
-              <div className="h-10 px-12 py-[6px] relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full flex justify-center items-center cursor-pointer hover:bg-[#2A2520] transition-colors">
-                <div className="w-44 h-[41px] absolute left-0 top-0 bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                <div className="flex flex-col justify-center text-white text-[13px] font-medium leading-5 font-sans">
-                  Start for free
-                </div>
-              </div>
+              <Button className="h-10 px-12 py-[6px] relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full text-white text-[13px] font-medium leading-5 font-sans hover:bg-[#2A2520] transition-colors">
+                <span
+                  aria-hidden="true"
+                  className="w-44 h-[41px] absolute left-0 top-0 bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"
+                />
+                <span className="relative z-10">Join the waitlist</span>
+              </Button>
             </div>
           </div>
         </div>

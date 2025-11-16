@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Button } from "@/components/ui/button"
 
 export default function PricingSection() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annually">("annually")
@@ -71,31 +72,27 @@ export default function PricingSection() {
               }`}
             />
 
-            <button
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={() => setBillingPeriod("annually")}
-              className="px-4 py-1 rounded-[99px] flex justify-center items-center gap-2 transition-colors duration-300 relative z-10 flex-1"
+              className={`px-4 py-1 rounded-[99px] flex-1 transition-colors duration-300 relative z-10 text-[13px] font-medium leading-5 font-sans ${
+                billingPeriod === "annually" ? "text-[#37322F]" : "text-[#6B7280]"
+              }`}
             >
-              <div
-                className={`text-[13px] font-medium leading-5 font-sans transition-colors duration-300 ${
-                  billingPeriod === "annually" ? "text-[#37322F]" : "text-[#6B7280]"
-                }`}
-              >
-                Annually
-              </div>
-            </button>
+              Annually
+            </Button>
 
-            <button
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={() => setBillingPeriod("monthly")}
-              className="px-4 py-1 rounded-[99px] flex justify-center items-center gap-2 transition-colors duration-300 relative z-10 flex-1"
+              className={`px-4 py-1 rounded-[99px] flex-1 transition-colors duration-300 relative z-10 text-[13px] font-medium leading-5 font-sans ${
+                billingPeriod === "monthly" ? "text-[#37322F]" : "text-[#6B7280]"
+              }`}
             >
-              <div
-                className={`text-[13px] font-medium leading-5 font-sans transition-colors duration-300 ${
-                  billingPeriod === "monthly" ? "text-[#37322F]" : "text-[#6B7280]"
-                }`}
-              >
-                Monthly
-              </div>
-            </button>
+              Monthly
+            </Button>
           </div>
 
           {/* Decorative dots */}
@@ -167,12 +164,15 @@ export default function PricingSection() {
                   </div>
                 </div>
 
-                <div className="self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center">
-                  <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                  <div className="max-w-[108px] flex justify-center flex-col text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans">
-                    Start for free
-                  </div>
-                </div>
+                <Button
+                  className="self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"
+                  />
+                  <span className="relative z-10">Start for free</span>
+                </Button>
               </div>
 
               <div className="self-stretch flex flex-col justify-start items-start gap-2">
@@ -248,12 +248,15 @@ export default function PricingSection() {
                 </div>
 
                 {/* CTA Button */}
-                <div className="self-stretch px-4 py-[10px] relative bg-[#FBFAF9] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center">
-                  <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                  <div className="max-w-[108px] flex justify-center flex-col text-[#37322F] text-[13px] font-medium leading-5 font-sans">
-                    Get started
-                  </div>
-                </div>
+                <Button
+                  className="self-stretch px-4 py-[10px] relative bg-[#FBFAF9] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] text-[#37322F] text-[13px] font-medium leading-5 font-sans"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"
+                  />
+                  <span className="relative z-10">Get started</span>
+                </Button>
               </div>
 
               <div className="self-stretch flex flex-col justify-start items-start gap-2">
@@ -329,12 +332,15 @@ export default function PricingSection() {
                   </div>
                 </div>
 
-                <div className="self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center">
-                  <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                  <div className="max-w-[108px] flex justify-center flex-col text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans">
-                    Contact sales
-                  </div>
-                </div>
+                <Button
+                  className="self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"
+                  />
+                  <span className="relative z-10">Contact sales</span>
+                </Button>
               </div>
 
               <div className="self-stretch flex flex-col justify-start items-start gap-2">

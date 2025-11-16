@@ -1,23 +1,25 @@
-"use client"
+'use client'
 
-import type React from "react"
+import type React from 'react'
 
-import { useState, useEffect, useRef } from "react"
-import SmartSimpleBrilliant from "../components/smart-simple-brilliant"
-import YourWorkInSync from "../components/your-work-in-sync"
-import EffortlessIntegration from "../components/effortless-integration-updated"
-import NumbersThatSpeak from "../components/numbers-that-speak"
-import DocumentationSection from "../components/documentation-section"
-import TestimonialsSection from "../components/testimonials-section"
-import FAQSection from "../components/faq-section"
-import PricingSection from "../components/pricing-section"
-import CTASection from "../components/cta-section"
-import FooterSection from "../components/footer-section"
+import { useState, useEffect, useRef } from 'react'
+import { Button } from '@/components/ui/button'
+import Navbar from '../components/navbar'
+import SmartSimpleBrilliant from '../components/smart-simple-brilliant'
+import YourWorkInSync from '../components/your-work-in-sync'
+import EffortlessIntegration from '../components/effortless-integration-updated'
+import NumbersThatSpeak from '../components/numbers-that-speak'
+import DocumentationSection from '../components/documentation-section'
+import TestimonialsSection from '../components/testimonials-section'
+import FAQSection from '../components/faq-section'
+import PricingSection from '../components/pricing-section'
+import CTASection from '../components/cta-section'
+import FooterSection from '../components/footer-section'
 
 // Reusable Badge Component
 function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <div className="px-[14px] py-[6px] bg-white shadow-[0px_0px_0px_4px_rgba(55,50,47,0.05)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)] shadow-xs">
+    <div className="px-[14px] py-[6px] bg-white shadow-sm overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)]">
       <div className="w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center">{icon}</div>
       <div className="text-center flex justify-center flex-col text-[#37322F] text-xs font-medium leading-3 font-sans">
         {text}
@@ -67,11 +69,23 @@ export default function LandingPage() {
   const getDashboardContent = () => {
     switch (activeCard) {
       case 0:
-        return <div className="text-[#828387] text-sm">Customer Subscription Status and Details</div>
+        return (
+          <div className="text-[#828387] text-sm">
+            Live intake console with caller info, SLA timers, and agent health monitoring.
+          </div>
+        )
       case 1:
-        return <div className="text-[#828387] text-sm">Analytics Dashboard - Real-time Insights</div>
+        return (
+          <div className="text-[#828387] text-sm">
+            Qualification metrics by service type, urgency, and lead source so nothing slips.
+          </div>
+        )
       case 2:
-        return <div className="text-[#828387] text-sm">Data Visualization - Charts and Metrics</div>
+        return (
+          <div className="text-[#828387] text-sm">
+            Dispatch-ready scheduling board with booked jobs, follow-ups, and tech capacity.
+          </div>
+        )
       default:
         return <div className="text-[#828387] text-sm">Customer Subscription Status and Details</div>
     }
@@ -89,70 +103,33 @@ export default function LandingPage() {
           <div className="w-[1px] h-full absolute right-4 sm:right-6 md:right-8 lg:right-0 top-0 bg-[rgba(55,50,47,0.12)] shadow-[1px_0px_0px_white] z-0"></div>
 
           <div className="self-stretch pt-[9px] overflow-hidden border-b border-[rgba(55,50,47,0.06)] flex flex-col justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-[66px] relative z-10">
-            {/* Navigation */}
-            <div className="w-full h-12 sm:h-14 md:h-16 lg:h-[84px] absolute left-0 top-0 flex justify-center items-center z-20 px-6 sm:px-8 md:px-12 lg:px-0">
-              <div className="w-full h-0 absolute left-0 top-6 sm:top-7 md:top-8 lg:top-[42px] border-t border-[rgba(55,50,47,0.12)] shadow-[0px_1px_0px_white]"></div>
-
-              <div className="w-full max-w-[calc(100%-32px)] sm:max-w-[calc(100%-48px)] md:max-w-[calc(100%-64px)] lg:max-w-[700px] lg:w-[700px] h-10 sm:h-11 md:h-12 py-1.5 sm:py-2 px-3 sm:px-4 md:px-4 pr-2 sm:pr-3 bg-[#F7F5F3] backdrop-blur-sm shadow-[0px_0px_0px_2px_white] overflow-hidden rounded-[50px] flex justify-between items-center relative z-30">
-                <div className="flex justify-center items-center">
-                  <div className="flex justify-start items-center">
-                    <div className="flex flex-col justify-center text-[#2F3037] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-5 font-sans">
-                      Brillance
-                    </div>
-                  </div>
-                  <div className="pl-3 sm:pl-4 md:pl-5 lg:pl-5 flex justify-start items-start hidden sm:flex flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-4">
-                    <div className="flex justify-start items-center">
-                      <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        Products
-                      </div>
-                    </div>
-                    <div className="flex justify-start items-center">
-                      <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        Pricing
-                      </div>
-                    </div>
-                    <div className="flex justify-start items-center">
-                      <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        Docs
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="h-6 sm:h-7 md:h-8 flex justify-start items-start gap-2 sm:gap-3">
-                  <div className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] bg-white shadow-[0px_1px_2px_rgba(55,50,47,0.12)] overflow-hidden rounded-full flex justify-center items-center">
-                    <div className="flex flex-col justify-center text-[#37322F] text-xs md:text-[13px] font-medium leading-5 font-sans">
-                      Log in
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Navbar />
 
             {/* Hero Section */}
-            <div className="pt-16 sm:pt-20 md:pt-24 lg:pt-[216px] pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full sm:pl-0 sm:pr-0 pl-0 pr-0">
+            <div className="pt-24 md:pt-24 lg:pt-42 pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full sm:pl-0 sm:pr-0 pl-0 pr-0">
               <div className="w-full max-w-[937px] lg:w-[937px] flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
                 <div className="self-stretch rounded-[3px] flex flex-col justify-center items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-                  <div className="w-full max-w-[748.71px] lg:w-[748.71px] text-center flex justify-center flex-col text-[#37322F] text-[24px] xs:text-[28px] sm:text-[36px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0">
-                    Effortless custom contract
+                  <div className="w-full max-w-[748px] lg:w-[748px] text-center flex justify-center flex-col text-[#37322F] text-[48px] sm:text-[48px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0">
+                    AI Front Desk
                     <br />
-                    billing by Brillance
+                    for HVAC Teams
                   </div>
                   <div className="w-full max-w-[506.08px] lg:w-[506.08px] text-center flex justify-center flex-col text-[rgba(55,50,47,0.80)] sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.45] md:leading-[1.5] lg:leading-7 font-sans px-2 sm:px-4 md:px-0 lg:text-lg font-medium text-sm">
-                    Streamline your billing process with seamless automation
-                    <br className="hidden sm:block" />
-                    for every custom contract, tailored by Brillance.
+                    We build, operate, and monitor AI receptionists that answer every inbound call, qualify leads, book
+                    jobs, and sync straight into your HVAC dispatch and CRM stack.
                   </div>
                 </div>
               </div>
 
               <div className="w-full max-w-[497px] lg:w-[497px] flex flex-col justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 relative z-10 mt-6 sm:mt-8 md:mt-10 lg:mt-12">
                 <div className="backdrop-blur-[8.25px] flex justify-start items-center gap-4">
-                  <div className="h-10 sm:h-11 md:h-12 px-6 sm:px-8 md:px-10 lg:px-12 py-2 sm:py-[6px] relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full flex justify-center items-center">
-                    <div className="w-20 sm:w-24 md:w-28 lg:w-44 h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                    <div className="flex flex-col justify-center text-white text-sm sm:text-base md:text-[15px] font-medium leading-5 font-sans">
-                      Start for free
-                    </div>
-                  </div>
+                  <Button className="h-10 sm:h-11 md:h-12 px-6 sm:px-8 md:px-10 lg:px-12 py-2 sm:py-[6px] relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full text-white text-sm sm:text-base md:text-[15px] font-medium leading-5 font-sans">
+                    <span
+                      aria-hidden="true"
+                      className="w-20 sm:w-24 md:w-28 lg:w-44 h-[41px] absolute left-0 top-[-0.5px]"
+                    />
+                    <span className="relative z-10">Join the waitlist</span>
+                  </Button>
                 </div>
               </div>
 
@@ -162,13 +139,13 @@ export default function LandingPage() {
                   alt=""
                   className="w-[936px] sm:w-[1404px] md:w-[2106px] lg:w-[2808px] h-auto opacity-30 sm:opacity-40 md:opacity-50 mix-blend-multiply"
                   style={{
-                    filter: "hue-rotate(15deg) saturate(0.7) brightness(1.2)",
+                    filter: 'hue-rotate(15deg) saturate(0.7) brightness(1.2)',
                   }}
                 />
               </div>
 
               <div className="w-full max-w-[960px] lg:w-[960px] pt-2 sm:pt-4 pb-6 sm:pb-8 md:pb-10 px-2 sm:px-4 md:px-6 lg:px-11 flex flex-col justify-center items-center gap-2 relative z-5 my-8 sm:my-12 md:my-16 lg:my-16 mb-0 lg:pb-0">
-                <div className="w-full max-w-[960px] lg:w-[960px] h-[200px] sm:h-[280px] md:h-[450px] lg:h-[695.55px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-[6px] sm:rounded-[8px] lg:rounded-[9.06px] flex flex-col justify-start items-start">
+                <div className="w-full max-w-[960px] lg:w-[960px] h-[300px] md:h-[450px] lg:h-[540px] bg-white overflow-hidden rounded-[6px] sm:rounded-[8px] lg:rounded-[9.06px] flex flex-col justify-start items-start">
                   {/* Dashboard Content */}
                   <div className="self-stretch flex-1 flex justify-start items-start">
                     {/* Main Content */}
@@ -177,12 +154,12 @@ export default function LandingPage() {
                         {/* Product Image 1 - Plan your schedules */}
                         <div
                           className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                            activeCard === 0 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
+                            activeCard === 0 ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-95 blur-sm'
                           }`}
                         >
                           <img
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dsadsadsa.jpg-xTHS4hGwCWp2H5bTj8np6DXZUyrxX7.jpeg"
-                            alt="Schedules Dashboard - Customer Subscription Management"
+                            src="/image-1.webp"
+                            alt="Live intake console with caller info, SLA timers, and agent health monitoring"
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -190,7 +167,7 @@ export default function LandingPage() {
                         {/* Product Image 2 - Data to insights */}
                         <div
                           className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                            activeCard === 1 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
+                            activeCard === 1 ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-95 blur-sm'
                           }`}
                         >
                           <img
@@ -203,7 +180,7 @@ export default function LandingPage() {
                         {/* Product Image 3 - Data visualization */}
                         <div
                           className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                            activeCard === 2 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
+                            activeCard === 2 ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-95 blur-sm'
                           }`}
                         >
                           <img
@@ -234,22 +211,22 @@ export default function LandingPage() {
                 <div className="flex-1 px-0 sm:px-2 md:px-0 flex flex-col md:flex-row justify-center items-stretch gap-0">
                   {/* Feature Cards */}
                   <FeatureCard
-                    title="Plan your schedules"
-                    description="Streamline customer subscriptions and billing with automated scheduling tools."
+                    title="24/7 inbound coverage"
+                    description="Auto-answer every call, capture caller details in multiple languages, and escalate “no heat” emergencies instantly."
                     isActive={activeCard === 0}
                     progress={activeCard === 0 ? progress : 0}
                     onClick={() => handleCardClick(0)}
                   />
                   <FeatureCard
-                    title="Analytics & insights"
-                    description="Transform your business data into actionable insights with real-time analytics."
+                    title="Qualify & route in real time"
+                    description="Detect service type, filter spam, and route to the on-call tech, dispatcher, or human rep with full context."
                     isActive={activeCard === 1}
                     progress={activeCard === 1 ? progress : 0}
                     onClick={() => handleCardClick(1)}
                   />
                   <FeatureCard
-                    title="Collaborate seamlessly"
-                    description="Keep your team aligned with shared dashboards and collaborative workflows."
+                    title="Schedule + sync automatically"
+                    description="Check availability, book jobs, send reminders, and push updates into ServiceTitan, Jobber, or your CRM."
                     isActive={activeCard === 2}
                     progress={activeCard === 2 ? progress : 0}
                     onClick={() => handleCardClick(2)}
@@ -290,15 +267,14 @@ export default function LandingPage() {
                           <rect x="9.5" y="5" width="1" height="1" fill="#37322F" />
                         </svg>
                       }
-                      text="Social Proof"
+                      text="HVAC results"
                     />
                     <div className="w-full max-w-[472.55px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-                      Confidence backed by results
+                      Never miss another HVAC lead
                     </div>
                     <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
-                      Our customers achieve more each day
-                      <br className="hidden sm:block" />
-                      because their tools are simple, powerful, and clear.
+                      Contractors deploy Brillance to answer after-hours calls, prioritize emergencies, and prove ROI
+                      with transparent monitoring and analytics.
                     </div>
                   </div>
                 </div>
@@ -334,14 +310,14 @@ export default function LandingPage() {
                           className={`
                             h-24 xs:h-28 sm:h-32 md:h-36 lg:h-40 flex justify-center items-center gap-1 xs:gap-2 sm:gap-3
                             border-b border-[rgba(227,226,225,0.5)]
-                            ${index < 6 ? "sm:border-b-[0.5px]" : "sm:border-b"}
-                            ${index >= 6 ? "border-b" : ""}
-                            ${isMobileFirstColumn ? "border-r-[0.5px]" : ""}
+                            ${index < 6 ? 'sm:border-b-[0.5px]' : 'sm:border-b'}
+                            ${index >= 6 ? 'border-b' : ''}
+                            ${isMobileFirstColumn ? 'border-r-[0.5px]' : ''}
                             sm:border-r-[0.5px] sm:border-l-0
-                            ${isDesktopFirstColumn ? "md:border-l" : "md:border-l-[0.5px]"}
-                            ${isDesktopLastColumn ? "md:border-r" : "md:border-r-[0.5px]"}
-                            ${isDesktopTopRow ? "md:border-b-[0.5px]" : ""}
-                            ${isDesktopBottomRow ? "md:border-t-[0.5px] md:border-b" : ""}
+                            ${isDesktopFirstColumn ? 'md:border-l' : 'md:border-l-[0.5px]'}
+                            ${isDesktopLastColumn ? 'md:border-r' : 'md:border-r-[0.5px]'}
+                            ${isDesktopTopRow ? 'md:border-b-[0.5px]' : ''}
+                            ${isDesktopBottomRow ? 'md:border-t-[0.5px] md:border-b' : ''}
                             border-[#E3E2E1]
                           `}
                         >
@@ -384,15 +360,14 @@ export default function LandingPage() {
                           <rect x="7" y="7" width="4" height="4" stroke="#37322F" strokeWidth="1" fill="none" />
                         </svg>
                       }
-                      text="Bento grid"
+                      text="HVAC voice ops"
                     />
                     <div className="w-full max-w-[598.06px] lg:w-[598.06px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-                      Built for absolute clarity and focused work
+                      Productized service for HVAC voice AI
                     </div>
                     <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
-                      Stay focused with tools that organize, connect
-                      <br />
-                      and turn information into confident decisions.
+                      Pre-built HVAC scripts, bilingual flows, and 24/7 monitoring give you a turnkey AI front desk
+                      without custom dev or extra hires.
                     </div>
                   </div>
                 </div>
@@ -416,10 +391,11 @@ export default function LandingPage() {
                     <div className="border-b border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          Smart. Simple. Brilliant.
+                          24/7 voice reception
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Your data is beautifully organized so you see everything clearly without the clutter.
+                          Auto-answer inbound calls, capture homeowner context, and escalate emergencies with a
+                          monitored AI front desk.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
@@ -436,10 +412,11 @@ export default function LandingPage() {
                     <div className="border-b border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] font-semibold leading-tight font-sans text-lg sm:text-xl">
-                          Your work, in sync
+                          Real-time qualification
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Every update flows instantly across your team and keeps collaboration effortless and fast.
+                          Determine service type, capture intent, block spam, and route high-priority jobs with call
+                          summaries attached.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden text-right items-center justify-center">
@@ -456,10 +433,11 @@ export default function LandingPage() {
                     <div className="border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6 bg-transparent">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          Effortless integration
+                          Dispatch + CRM sync
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          All your favorite tools connect in one place and work together seamlessly by design.
+                          Create jobs, update customer records, and trigger workflows in ServiceTitan, Jobber,
+                          FieldEdge, or HubSpot automatically.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden justify-center items-center relative bg-transparent">
@@ -475,10 +453,11 @@ export default function LandingPage() {
                     <div className="p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          Numbers that speak
+                          Analytics & upsell automation
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Track growth with precision and turn raw data into confident decisions you can trust.
+                          View answered calls, booked jobs, conversion rates, and trigger maintenance plans, filter
+                          reminders, or marketing flows automatically.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden items-center justify-center relative">
@@ -560,8 +539,8 @@ function FeatureCard({
     <div
       className={`w-full md:flex-1 self-stretch px-6 py-5 overflow-hidden flex flex-col justify-start items-start gap-2 cursor-pointer relative border-b md:border-b-0 last:border-b-0 ${
         isActive
-          ? "bg-white shadow-[0px_0px_0px_0.75px_#E0DEDB_inset]"
-          : "border-l-0 border-r-0 md:border border-[#E0DEDB]/80"
+          ? 'bg-white shadow-[0px_0px_0px_0.75px_#E0DEDB_inset]'
+          : 'border-l-0 border-r-0 md:border border-[#E0DEDB]/80'
       }`}
       onClick={onClick}
     >
